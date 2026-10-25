@@ -1,0 +1,29 @@
+# private settings / environments
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.idea/
+.vscode/
+configs/*.local.json
+# datasets & generated artifacts
+data/papers/*
+!data/papers/.gitkeep
+logs/*
+!logs/.gitkeep
+*.log
+*.db
+*.sqlite3
+# front-end dependencies
+frontend/node_modules/
+frontend/dist/
+# build output
+build/
+dist/
+*.egg-info/
+*.tsbuildinfo
+.DS_Store
+Thumbs.db

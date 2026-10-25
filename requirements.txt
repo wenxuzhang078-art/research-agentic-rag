@@ -1,0 +1,7 @@
+# Python 3.12; install at project root
+openai>=1.60
+python-dotenv>=1.0
+pymilvus>=2.5,<3
+PyMuPDF>=1.24
+langgraph>=1.0,<2
+jsonschema>=4.20

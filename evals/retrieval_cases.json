@@ -1,0 +1,51 @@
+[
+  {
+    "id": "q001",
+    "question": "该论文提出了哪三个层级的特征表示？",
+    "relevant_chunk_ids": [
+      "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p1_c2",
+      "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p2_c2",
+      "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p8_c5"
+    ]
+  },
+  {
+    "id": "q002",
+    "question": "为什么需要将重建目标和一致性目标分离？",
+    "relevant_chunk_ids": [
+      "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p1_c1",
+      "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p2_c1",
+      "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p3_c5",
+      "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p3_c7"
+    ]
+  },
+
+{
+  "id": "q003",
+  "question": "该方法如何处理不同视图之间的一致性？",
+  "relevant_chunk_ids": [
+    "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p1_c2",
+    "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p4_c1",
+    "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p4_c2",
+    "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p4_c5"
+  ]
+},
+  {
+    "id": "q004",
+    "question": "低层特征与高层特征分别承担什么任务？",
+    "relevant_chunk_ids": [
+      "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p1_c2",
+      "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p2_c1",
+      "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p4_c2",
+      "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p7_c1"
+    ]
+  },
+  {
+    "id": "q005",
+    "question": "论文如何设计不同的训练损失？",
+    "relevant_chunk_ids": [
+      "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p4_c6",
+      "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p5_c2",
+      "Multi-level Feature Learning for Contrastive Multi-view Clustering.pdf_p8_c1"
+    ]
+  }
+]

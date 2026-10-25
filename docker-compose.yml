@@ -1,0 +1,80 @@
+
+name: mvc-research-agent
+
+services:
+  etcd:
+    image: quay.io/coreos/etcd:v3.5.18
+    container_name: mvc-etcd
+    restart: unless-stopped
+    environment:
+      ETCD_AUTO_COMPACTION_MODE: revision
+      ETCD_AUTO_COMPACTION_RETENTION: "1000"
+      ETCD_QUOTA_BACKEND_BYTES: "4294967296"
+    command:
+      - etcd
+      - -advertise-client-urls=http://etcd:2379
+      - -listen-client-urls=http://0.0.0.0:2379
+      - --data-dir=/etcd
+    volumes:
+      - mvc_etcd_data:/etcd
+    networks:
+      - mvc_network
+
+  minio:
+    image: coollabsio/minio:latest
+    container_name: mvc-minio
+    restart: unless-stopped
+    environment:
+      MINIO_ROOT_USER: mvcminio
+      MINIO_ROOT_PASSWORD: mvcminio123
+    command: server /data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    volumes:
+      - mvc_minio_data:/data
+    networks:
+      mvc_network:
+        aliases:
+          - mvc-minio
+
+  milvus:
+    image: milvusdb/milvus:v2.5.12
+    container_name: mvc-milvus
+    restart: unless-stopped
+    command: ["milvus", "run", "standalone"]
+    ports:
+      - "127.0.0.1:19531:19530"
+      - "127.0.0.1:9092:9091"
+    environment:
+      ETCD_ENDPOINTS: etcd:2379
+      COMMON_STORAGETYPE: remote
+      MINIO_ADDRESS: mvc-minio:9000
+      MINIO_ACCESSKEYID: mvcminio
+      MINIO_SECRETACCESSKEY: mvcminio123
+    depends_on:
+      etcd:
+        condition: service_started
+      minio:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      interval: 10s
+      timeout: 10s
+      retries: 30
+      start_period: 60s
+    volumes:
+      - mvc_milvus_data:/var/lib/milvus
+    networks:
+      - mvc_network
+
+networks:
+  mvc_network:
+    driver: bridge
+
+volumes:
+  mvc_etcd_data:
+  mvc_minio_data:
+  mvc_milvus_data:

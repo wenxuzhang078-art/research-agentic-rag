@@ -1,0 +1,14 @@
+
+{
+  "server_id": "arxiv",
+  "command": "uvx",
+  "args": [
+    "--from",
+    "arxiv-mcp-server==0.8.2",
+    "arxiv-mcp-server"
+  ],
+  "allowed_tools": [
+    "search_papers",
+    "get_abstract"
+  ]
+}

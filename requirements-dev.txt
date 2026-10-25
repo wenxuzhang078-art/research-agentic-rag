@@ -1,0 +1,4 @@
+# Full application dependencies and the FastAPI TestClient transport.
+-r requirements-api.txt
+-r requirements-mcp.txt
+httpx>=0.27,<1
