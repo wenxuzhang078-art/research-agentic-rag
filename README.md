@@ -189,3 +189,7 @@ python -m evals.evaluate_retrieval --with-rerank
 
 系统支持通过 LangGraph Agent 查询本地论文知识库与
 外部 arXiv 学术资源，并在前端展示引用来源与执行结果。
+
+### PDF 文献管理界面
+
+![文献管理界面](docs/images/Ku.png)
