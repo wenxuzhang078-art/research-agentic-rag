@@ -175,3 +175,17 @@ python -m evals.evaluate_retrieval --with-rerank
 - [Web 与 API](docs/WEB_QUICKSTART.md)：启动、接口契约、构建与常见问题。
 - [前端说明](frontend/README.md)：开发、代理、目录与页面行为。
 - [开发与发布](docs/DEVELOPMENT.md)：调试参数、测试、评测及 GitHub 提交准备。
+
+
+## 系统运行效果
+
+本项目提供基于 FastAPI + React 的科研智能问答界面，
+支持普通 RAG 与 Agentic RAG 模式切换、
+外部 MCP 工具调用、证据引用及执行轨迹可视化。
+
+### 科研智能问答界面
+
+![Research Atlas 科研智能问答系统](docs/images/research-atlas-demo.png)
+
+系统支持通过 LangGraph Agent 查询本地论文知识库与
+外部 arXiv 学术资源，并在前端展示引用来源与执行结果。
